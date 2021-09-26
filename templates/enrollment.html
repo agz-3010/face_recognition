@@ -1,0 +1,161 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-10">
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header" id="top">
+                            <h2 class="pageheader-title">Enrollment</h2>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="/enrollment/" class="breadcrumb-link">Enrollment</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Registration forms</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader  -->
+                <!-- ============================================================== -->
+            </div>
+        </div>
+        <!-- ============================================================== -->
+            <!-- accused registration-->
+            <!-- ============================================================== -->
+            <div class="row">
+                <!-- ============================================================== -->
+                <!-- validation form -->
+                <!-- ============================================================== -->
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <h5 class="card-header"> Register accused details </h5>
+                        <div class="card-body">
+                          <form action="/insertAcc" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                              <div class="col">
+                                  <input type="text" class="form-control" placeholder="Full name ...." name="noms" required>
+                              </div>
+                              <div class="col">
+                                <input type="number" class="form-control" placeholder="age..." name="age" required>
+                              </div>
+                              
+                               <div class="col">
+                                <label for="genre">Genre : </label>
+                                <select name="genre" id="genre">
+                                  <option value="M">M</option>
+                                  <option value="F">F</option>
+                                </select>
+                              </div>
+                              <div class="col">
+                                <input type="date" class="form-control" placeholder="Date de Naissance..." name="dateNaissance" required>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="row">
+
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="phone..." name="phone">
+                              </div>
+                              
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="nationalite...." name="nationalite" required>
+                            </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="email..." name = "email" required>
+                              </div>
+                            </div>
+                            
+                            <br>
+                            
+                            
+                          
+                            <div class="row">
+                              <div class="col">
+                                  <input type="text" class="form-control" placeholder="Ville..." name="ville" required>
+                              </div>
+                              <div class="col">
+                                  <input type="text" class="form-control" placeholder="Commune..." name="commune" required>
+                              </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Quartier..." name="quartier" required>
+                              </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Cellule..." name="cellule" required>
+                              </div>
+                            </div>
+                           <br>
+                            <div class="row">
+                              <div class="col">
+                                  <input type="text" class="form-control" placeholder="Avenue" name="avenue">
+                              </div>
+                              <div class="col">
+                                  <input type="text" class="form-control" placeholder="Numéro Parcelle" name="numParcelle">
+                              </div>
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Latitude" name="latitude">
+                              </div>
+                              <div class="col">
+                                  <input type="text" class="form-control" placeholder="Longitude" name="longitude">
+                              </div>
+                            </div>
+                            <br>
+                              <hr>
+                              <div>
+                                <h5>Register accused Infractions and Punishement</h5>
+                              </div>
+                              <hr>
+                              <div class="row">
+
+                                <div class="col-4"> 
+                                  Enter Date Infractions:
+                                  <input type="date" class="form-control" placeholder="Date d'Accusation..." name="dateI" required>
+                                <br>
+                                  Enter Infractions :
+                                    <textarea type="text" class="form-control" placeholder="Infractions..." name="designationI" cols="10" rows="10"> Infractions </textarea>
+                                </div>
+
+                                <div class="col-4">
+                                  Enter Date Condamnation :
+                                  <input type="date" class="form-control" placeholder="Date  Condamnation..." name="dateCondamnation" required>
+                                <br>
+                                  Enter Punishement :
+                                    <textarea type="text" class="form-control" placeholder="Punishement..." name="designationP" cols="10" rows="10"> Punishement </textarea>
+                                </div>
+
+                                <div class="col-4">
+                                  Enter Date End Punishement :
+                                  <input type="date" class="form-control" placeholder="Date End Punishement..." name="dateSortie" required>
+                                  <br>
+                                 status :
+                                    <input type="text" class="form-control" placeholder="Status..." name="statusP">
+
+                                </div>
+                              </div>
+                              <br>
+                            <div class="row">
+                                <div class="col-5"></div>
+                                <div class="col-7">
+                                  <input type="submit" name = "submit" value="save" class="btn btn-success btn-round">
+                                </div>
+                            </div>
+                          <br>
+                          </form>    
+                          </div>
+                           
+                        </div>
+                    </div>
+                  </div>
+                <!-- ============================================================== -->
+                <!-- end validation form -->
+                <!-- ============================================================== -->
+
+{% endblock content %}
